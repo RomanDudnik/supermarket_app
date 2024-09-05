@@ -4,13 +4,13 @@ import Classes.Actor;
 
 import java.util.List;
 
-public interface IMarketBehaviour {
+public interface iMarketBehaviour {
 
     // метод принятия в магазин
     public void acceptToMarket(Actor actor);
 
-    // метод выдачи в магазин
-    public void releaseToMarket(List<Actor> list);
+    // метод выдачи из магазина
+    public void releaseFromMarket(List<Actor> list);
 
     // метод обновления
     public void update();

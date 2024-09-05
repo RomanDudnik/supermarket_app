@@ -2,13 +2,13 @@ package Interfaces;
 
 import Classes.Actor;
 
-public interface IQueueBehaviour {
+public interface iQueueBehaviour {
 
     // метод принятия в очередь
     public void takeInQueue(Actor actor);
 
     // метод выхода из очереди
-    public  void releaseFromQueue(Actor actor);
+    public void releaseFromQueue();
 
     // метод получения заказа
     public void takeOrder();

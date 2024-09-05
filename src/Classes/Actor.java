@@ -1,6 +1,8 @@
 package Classes;
 
-public abstract class Actor {
+import Interfaces.iActorBehaviour;
+
+public abstract class Actor implements iActorBehaviour {
 
     // Имя
     protected String name;
