@@ -1,5 +1,6 @@
 package Classes;
 
+import Interfaces.iActorBehaviour;
 import Interfaces.iMarketBehaviour;
 import Interfaces.iQueueBehaviour;
 
@@ -10,13 +11,13 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     /**
      *  Лист очереди
      */
-    private List<Actor> queue;
+    private List<iActorBehaviour> queue;
 
     /**
      * Конструктор магазина
      */
     public Market() {
-        this.queue = new ArrayList<Actor>();
+        this.queue = new ArrayList<iActorBehaviour>();
     }
 
     /**
@@ -26,16 +27,16 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     // Метод принятия в магазин
     @Override
-    public void acceptToMarket(Actor actor) {
-        System.out.println(actor.getName() + " клиент пришел в магазин ");
+    public void acceptToMarket(iActorBehaviour actor) {
+        System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");
         takeInQueue(actor);
     }
 
     // Метод принятия в очередь
     @Override
-    public void takeInQueue(Actor actor) {
+    public void takeInQueue(iActorBehaviour actor) {
         this.queue.add(actor);
-        System.out.println(actor.getName() + " клиент добавлен в очередь ");
+        System.out.println(actor.getActor().getName() + " клиент добавлен в очередь ");
     }
 
     // Метод выдачи из магазина
@@ -50,7 +51,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     // Метод выдачи заказа
     @Override
     public void giveOrder() {
-        for (Actor actor : queue) {
+        for (iActorBehaviour actor : queue) {
             if (actor.isMakeOrder()) {
                 actor.setTakeOrder(true);
                 System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
@@ -62,9 +63,9 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     @Override
     public void releaseFromQueue() {
         List<Actor> releaseActors = new ArrayList<>();
-        for (Actor actor : queue) {
+        for (iActorBehaviour actor : queue) {
             if (actor.isTakeOrder()) {
-                releaseActors.add(actor);
+                releaseActors.add(actor.getActor());
                 System.out.println(actor.getActor().getName() + " клиент ушел из очереди ");
             }
         }
@@ -74,8 +75,8 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     // Метод получения заказа
     @Override
     public void takeOrder() {
-        for (Actor actor : queue) {
-            if (!actor.isMakeOrder) {
+        for (iActorBehaviour actor : queue) {
+            if (!actor.getActor().isMakeOrder) {
                 actor.setMakeOrder(true);
                 System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
 

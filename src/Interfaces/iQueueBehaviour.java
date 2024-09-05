@@ -5,7 +5,7 @@ import Classes.Actor;
 public interface iQueueBehaviour {
 
     // метод принятия в очередь
-    public void takeInQueue(Actor actor);
+    public void takeInQueue(iActorBehaviour actor);
 
     // метод выхода из очереди
     public void releaseFromQueue();
