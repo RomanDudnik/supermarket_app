@@ -2,6 +2,9 @@ package Interfaces;
 
 import Classes.Actor;
 
+/**
+ * Интерфейс поведения очереди
+ */
 public interface iQueueBehaviour {
 
     // метод принятия в очередь

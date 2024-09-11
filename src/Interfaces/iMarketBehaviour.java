@@ -4,6 +4,10 @@ import Classes.Actor;
 
 import java.util.List;
 
+/**
+ * Интерфейс поведения клиентов в магазине
+ */
+
 public interface iMarketBehaviour {
 
     // метод принятия в магазин
