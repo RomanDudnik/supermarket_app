@@ -7,7 +7,13 @@ import Interfaces.iQueueBehaviour;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс магазина
+ */
+
 public class Market implements iMarketBehaviour, iQueueBehaviour {
+
+
     /**
      *  Лист очереди
      */

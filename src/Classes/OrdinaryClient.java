@@ -1,12 +1,17 @@
 package Classes;
 
+/**
+ * Класс обычного клиента
+ */
+
 public class OrdinaryClient extends Actor {
 
     private int number;
 
-    public OrdinaryClient(String name, int number) {
+    public OrdinaryClient(String name, int number, boolean isCheckOrder) {
         super(name);
         this.number = number;
+        super.checkOrder();
 
     }
 
@@ -41,6 +46,7 @@ public class OrdinaryClient extends Actor {
         return super.isMakeOrder;
     }
 
+
     public void setTakeOrder(boolean val) {
         super.isTakeOrder = val;
     }
@@ -48,6 +54,15 @@ public class OrdinaryClient extends Actor {
     public void setMakeOrder(boolean val) {
         super.isMakeOrder = val;
     }
+
+    public boolean ReturnOrder() {
+        return super.isCheckOrder;
+    }
+
+    public void checkOrder() {
+        super.isCheckOrder = true;
+    }
+
 
     // вызов ссылки на экземпляр
     public Actor getActor() {

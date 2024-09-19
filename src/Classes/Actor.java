@@ -1,8 +1,13 @@
 package Classes;
 
 import Interfaces.iActorBehaviour;
+import Interfaces.iReturnOrder;
 
-public abstract class Actor implements iActorBehaviour {
+/**
+ * Родительский класс клиентов
+ */
+
+public abstract class Actor implements iActorBehaviour, iReturnOrder {
 
     // Имя
     protected String name;
@@ -12,7 +17,9 @@ public abstract class Actor implements iActorBehaviour {
 
     protected boolean isMakeOrder;
 
-    // Конструктор (принимает только имя)
+    protected boolean isCheckOrder;
+
+     // Конструктор (принимает только имя)
     public Actor(String name) {
         this.name = name;
     }

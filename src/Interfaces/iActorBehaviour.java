@@ -16,6 +16,7 @@ public interface iActorBehaviour {
 
     public void setMakeOrder(boolean val);
 
+
     // вызов ссылки на экземпляр
     public Actor getActor();
 }

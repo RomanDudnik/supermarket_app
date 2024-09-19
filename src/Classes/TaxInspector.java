@@ -1,14 +1,21 @@
 package Classes;
 
 import Interfaces.iActorBehaviour;
+import Interfaces.iReturnOrder;
 
-public class TaxInspector implements iActorBehaviour {
+/**
+ * Класс инспектора
+ */
+public class TaxInspector implements iActorBehaviour, iReturnOrder {
 
     private String name;
 
     private boolean isTakeOrder;
 
     private boolean isMakeOrder;
+
+    private boolean isCheckOrder;
+
 
     public TaxInspector() {
         this.name = "TaxInspector";
@@ -40,6 +47,16 @@ public class TaxInspector implements iActorBehaviour {
 
     @Override
     public Actor getActor() {
-        return new OrdinaryClient("Mystery shopper", 1);
+        return new OrdinaryClient("Mystery shopper", 1, false);
+    }
+
+    @Override
+    public boolean ReturnOrder() {
+        return this.ReturnOrder();
+    }
+
+    @Override
+    public void checkOrder() {
+        this.isCheckOrder = true;
     }
 }

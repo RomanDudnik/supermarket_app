@@ -1,13 +1,17 @@
 package Classes;
 
+/**
+ * Класс VIP клиента
+ */
+
 public class SpecialClient extends Actor {
 
     private int vipId;
 
-    public SpecialClient(String name, int number) {
+    public SpecialClient(String name, int number, boolean isCheckOrder) {
         super(name);
         this.vipId = number;
-
+        super.checkOrder();
     }
 
     // Геттеры и сеттеры
@@ -49,8 +53,17 @@ public class SpecialClient extends Actor {
         super.isMakeOrder = val;
     }
 
+    public boolean ReturnOrder() {
+        return super.isCheckOrder;
+    }
+
+    public void checkOrder() {
+        super.isCheckOrder = true;
+    }
+
     // вызов ссылки на экземпляр
     public Actor getActor() {
         return this;
     }
+
 }

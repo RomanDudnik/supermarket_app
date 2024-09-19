@@ -6,5 +6,10 @@ package Interfaces;
 
 public interface iReturnOrder {
 
-    public void returnOrder();
+    //Метод возврата заказа
+    public boolean ReturnOrder();
+
+    //Метод проверки заказа
+    public default void checkOrder() {
+    }
 }

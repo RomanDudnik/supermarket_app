@@ -10,10 +10,10 @@ public class PromotionClient extends Actor {
     private int promoId;
 
     // Название промо акции
-    private String promoName;
+    private static String promoName;
 
-    // Ограничение участников промо акции
-    private static final int volumePromoClients = 3;
+    // Ограничение(количество) участников промо акции
+    private static int amountPromoClients;
 
     // Конструктор промо клиента
     public PromotionClient(String name, int promoId, String promoName) {
@@ -23,8 +23,6 @@ public class PromotionClient extends Actor {
     }
 
     // Геттеры и сеттеры
-
-
     public String getPromoName() {
         return promoName;
     }
@@ -64,5 +62,13 @@ public class PromotionClient extends Actor {
     // вызов ссылки на экземпляр
     public Actor getActor() {
         return this;
+    }
+
+    public boolean ReturnOrder() {
+        return super.isCheckOrder;
+    }
+
+    public void checkOrder() {
+        super.isCheckOrder = true;
     }
 }
