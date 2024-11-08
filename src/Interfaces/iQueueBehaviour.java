@@ -3,20 +3,30 @@ package Interfaces;
 import Classes.Actor;
 
 /**
- * Интерфейс поведения очереди
+ * Интерфейс поведения очереди.
+ * Определяет поведение очереди в магазине,
+ * включая ее способность принимать и удалять клиентов.
  */
 public interface iQueueBehaviour {
 
-    // метод принятия в очередь
+    /**
+     * Метод принятия в очередь
+     */
     public void takeInQueue(iActorBehaviour actor);
 
-    // метод выхода из очереди
+    /**
+     * Метод выхода из очереди
+     */
     public void releaseFromQueue();
 
-    // метод получения заказа
+    /**
+     * Метод создания заказа
+     */
     public void takeOrder();
 
-    // метод выдачи заказа
+    /**
+     * метод выдачи заказа
+     */
     public void giveOrder();
 
 }

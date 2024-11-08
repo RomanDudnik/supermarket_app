@@ -4,7 +4,10 @@ import Interfaces.iActorBehaviour;
 import Interfaces.iReturnOrder;
 
 /**
- * Родительский класс клиентов
+ * Родительский класс клиентов.
+ * Представляют собой клиентов, которые могут взаимодействовать с магазином.
+ * Акторы могут быть разных типов,
+ * таких как обычные клиенты, специальные клиенты, промо-клиенты и так далее.
  */
 
 public abstract class Actor implements iActorBehaviour, iReturnOrder {

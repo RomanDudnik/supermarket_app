@@ -5,17 +5,27 @@ import Classes.Actor;
 import java.util.List;
 
 /**
- * Интерфейс поведения клиентов в магазине
+ * Интерфейс поведения клиентов в магазине.
+ * Определяет поведение магазина, включая его способность принимать клиентов,
+ * обрабатывать заказы и управлять очередью.
  */
 
 public interface iMarketBehaviour {
 
-    // метод принятия в магазин
+    /**
+     * Метод принятия в магазин
+     * @param actor
+     */
     public void acceptToMarket(iActorBehaviour actor);
 
-    // метод выдачи из магазина
+    /**
+     * Метод выхода из магазина
+     * @param list
+     */
     public void releaseFromMarket(List<Actor> list);
 
-    // метод обновления
+    /**
+     * Метод обновления состояния клиента
+     */
     public void update();
 }

@@ -1,6 +1,9 @@
 import Classes.*;
 import Interfaces.iActorBehaviour;
 
+/**
+ * Проект представляет собой систему, моделирующую поведение клиентов в магазине.
+ */
 public class App {
     public static void main(String[] args) {
 

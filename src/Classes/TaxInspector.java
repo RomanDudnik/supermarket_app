@@ -4,7 +4,9 @@ import Interfaces.iActorBehaviour;
 import Interfaces.iReturnOrder;
 
 /**
- * Класс инспектора
+ * Класс инспектора.
+ * Представляет собой инспектора,
+ * который может проверять заказы и возвращать их.
  */
 public class TaxInspector implements iActorBehaviour, iReturnOrder {
 

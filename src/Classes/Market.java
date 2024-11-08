@@ -8,14 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Класс магазина
+ * Класс магазина.
+ * Представляет собой магазин,
+ * который может принимать клиентов,
+ * обрабатывать заказы и управлять очередью.
+ * Заказы (Orders): представляют собой товары, которые клиенты могут покупать в магазине.
  */
 
 public class Market implements iMarketBehaviour, iQueueBehaviour {
 
 
     /**
-     *  Лист очереди
+     * Лист очереди
      */
     private List<iActorBehaviour> queue;
 
@@ -26,26 +30,34 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         this.queue = new ArrayList<iActorBehaviour>();
     }
 
+
+     // Переопределение методов поведения:
+
+
     /**
-     * Переопределение методов поведения
+     * Метод, который добавляет клиента в очередь магазина.
      * @param actor
      */
-
-    // Метод принятия в магазин
     @Override
     public void acceptToMarket(iActorBehaviour actor) {
         System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");
         takeInQueue(actor);
     }
 
-    // Метод принятия в очередь
+    /**
+     * Метод добавляет нового клиента в очередь.
+     * @param actor
+     */
     @Override
     public void takeInQueue(iActorBehaviour actor) {
         this.queue.add(actor);
         System.out.println(actor.getActor().getName() + " клиент добавлен в очередь ");
     }
 
-    // Метод выдачи из магазина
+    /**
+     * Метод, который удаляет клиента из очереди магазина.
+     * @param actors
+     */
     @Override
     public void releaseFromMarket(List<Actor> actors) {
         for (Actor actor : actors) {
@@ -54,7 +66,9 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         }
     }
 
-    // Метод выдачи заказа
+    /**
+     *  Метод, который выдает заказ клиенту.
+     */
     @Override
     public void giveOrder() {
         for (iActorBehaviour actor : queue) {
@@ -65,7 +79,10 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         }
     }
 
-    // Метод выхода из очереди
+    /**
+     * Метод удаляет клиентов из очереди,
+     * которые уже получили свой заказ.
+     */
     @Override
     public void releaseFromQueue() {
         List<Actor> releaseActors = new ArrayList<>();
@@ -78,7 +95,9 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         releaseFromMarket(releaseActors);
     }
 
-    // Метод получения заказа
+    /**
+     * Метод, который позволяет клиенту оформить заказ.
+     */
     @Override
     public void takeOrder() {
         for (iActorBehaviour actor : queue) {
@@ -91,7 +110,9 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     }
 
-    // Метод обновления
+    /**
+     * Метод, который обновляет состояние магазина и очереди.
+     */
     @Override
     public void update() {
         takeOrder();
